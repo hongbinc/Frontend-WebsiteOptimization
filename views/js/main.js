@@ -450,11 +450,15 @@ var resizePizzas = function(size) {
 
   // Iterates through pizza elements on the page and changes their widths
   function changePizzaSizes(size) {
-    for (var i = 0; i < document.querySelectorAll(".randomPizzaContainer").length; i++) {
-      var dx = determineDx(document.querySelectorAll(".randomPizzaContainer")[i], size);
-      var newwidth = (document.querySelectorAll(".randomPizzaContainer")[i].offsetWidth + dx) + 'px';
-      document.querySelectorAll(".randomPizzaContainer")[i].style.width = newwidth;
-    }
+      // Issue one: moved caulculating offsetWith and dx out of the for loop
+      // use querySelector instead of querySelectorAll    
+      var dx = determineDx(document.querySelector(".randomPizzaContainer"), size);
+      var offsetWidth = document.querySelector(".randomPizzaContainer").offsetWidth;
+
+      for (var i = 0; i < document.querySelectorAll(".randomPizzaContainer").length; i++) {
+          var newwidth = (offsetWidth + dx) + 'px';
+          document.querySelectorAll(".randomPizzaContainer")[i].style.width = newwidth;
+      }
   }
 
   changePizzaSizes(size);
@@ -525,8 +529,8 @@ window.addEventListener('scroll', updatePositions);
 document.addEventListener('DOMContentLoaded', function() {
   var cols = 8;
   var s = 256;
-  var elem = document.createElement('img');
   for (var i = 0; i < 200; i++) {
+    var elem = document.createElement('img');
     elem.className = 'mover';
     elem.src = "images/pizza.png";
     elem.style.height = "100px";
