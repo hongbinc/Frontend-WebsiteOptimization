@@ -13,14 +13,14 @@
 </ul>
 
 <h2>Testing:</h2>
-<p>Use <a href="https://developers.google.com/speed/pagespeed/insights/">`PageSpeed Insights`</a> to test following pages</p>
+<p>Use <a href="https://developers.google.com/speed/pagespeed/insights/">PageSpeed Insights</a> to test following pages</p>
 <ul>
 	<li><a href="http://hongbinc.github.io/Frontend-WebsiteOptimization/">index.html</a></li>
 	<li><a href="http://hongbinc.github.io/Frontend-WebsiteOptimization/project-2048.html">project-2048.html</a></li>
 	<li><a href="http://hongbinc.github.io/Frontend-WebsiteOptimization/project-webperf.html">project-webperf.html</a></li>
 	<li><a href="http://hongbinc.github.io/Frontend-WebsiteOptimization/project-mobile.html">project-mobile.html</a></li>
 </ul>
-<p>Use `Google Developer tool` to test the following page runs in 60pfs</p>
+   Use `Google Developer tool` to test the following page runs in 60fps
 <ul>
   <li><a href="http://hongbinc.github.io/Frontend-WebsiteOptimization/views/pizza.html">pizza.html</a></li>
 </ul>
