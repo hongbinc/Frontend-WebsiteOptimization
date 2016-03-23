@@ -406,6 +406,7 @@ var resizePizzas = function(size) {
   function changeSliderLabel(size) {
     switch(size) {
       case "1":
+<<<<<<< 954ef8d942d8effdc7def7fe3093d2398e8e910a
         document.getElementById("pizzaSize").innerHTML = "Small";
         return;
       case "2":
@@ -413,6 +414,15 @@ var resizePizzas = function(size) {
         return;
       case "3":
         document.getElementById("pizzaSize").innerHTML = "Large";
+=======
+        document.getElementById("#pizzaSize").innerHTML = "Small";
+        return;
+      case "2":
+        document.getElementById("#pizzaSize").innerHTML = "Medium";
+        return;
+      case "3":
+        document.getElementById("#pizzaSize").innerHTML = "Large";
+>>>>>>> use getElementsByClassName/Id instead of querySelector
         return;
       default:
         console.log("bug in changeSliderLabel");
@@ -424,7 +434,11 @@ var resizePizzas = function(size) {
    // Returns the size difference to change a pizza element from one size to another. Called by changePizzaSlices(size).
   function determineDx (elem, size) {
     var oldWidth = elem.offsetWidth;
+<<<<<<< 954ef8d942d8effdc7def7fe3093d2398e8e910a
     var windowWidth = document.getElementById("randomPizzas").offsetWidth;
+=======
+    var windowWidth = document.getElementById("#randomPizzas").offsetWidth;
+>>>>>>> use getElementsByClassName/Id instead of querySelector
     var oldSize = oldWidth / windowWidth;
 
     // Optional TODO: change to 3 sizes? no more xl?
@@ -452,11 +466,20 @@ var resizePizzas = function(size) {
   function changePizzaSizes(size) {
       // Issue one: moved caulculating offsetWith and dx out of the for loop
       // use getElementsByClassName instead of querySelectorAll    
+<<<<<<< 954ef8d942d8effdc7def7fe3093d2398e8e910a
       var randomPizza = document.getElementsByClassName("randomPizzaContainer");
       var dx = determineDx(randomPizza[0], size);
       var newwidth = (randomPizza[0].offsetWidth + dx) + 'px';
       for (var i = 0; i < randomPizza.length; i++) {
             randomPizza[i].style.width = newwidth;
+=======
+      var randomPizza = document.getElementsByClassName(".randomPizzaContainer");
+      var dx = determineDx(randomPizza[0], size);
+      var newwidth = (randomPizza[0].offsetWidth + dx) + 'px';
+      for (var i = 0; i < randomPizza.length; i++) {
+          
+          randomPizza[i].style.width = newwidth;
+>>>>>>> use getElementsByClassName/Id instead of querySelector
       }
   }
 
@@ -507,8 +530,13 @@ function updatePositions() {
   // Issue two: move document.body.scrollTop and items out of the for loop, avoid to get the value many times
   var items = document.getElementsByClassName('mover');
   var scrollTop_value = document.body.scrollTop / 1250;
+<<<<<<< 954ef8d942d8effdc7def7fe3093d2398e8e910a
   var length = items.length;
   for (var i = 0; i < length; i++) {
+=======
+  var items = document.getElementsByClassName('.mover');
+  for (var i = 0; i < items.length; i++) {
+>>>>>>> use getElementsByClassName/Id instead of querySelector
     var phase = Math.sin((scrollTop_value) + (i % 5));
     items[i].style.left = items[i].basicLeft + 100 * phase + 'px';
   }
@@ -538,7 +566,11 @@ document.addEventListener('DOMContentLoaded', function() {
     elem.style.width = "73.333px";
     elem.basicLeft = (i % cols) * s;
     elem.style.top = (Math.floor(i / cols) * s) + 'px';
+<<<<<<< 954ef8d942d8effdc7def7fe3093d2398e8e910a
     document.getElementById("movingPizzas1").appendChild(elem);
+=======
+    document.getElementById("#movingPizzas1").appendChild(elem);
+>>>>>>> use getElementsByClassName/Id instead of querySelector
   }
   updatePositions();
 });
