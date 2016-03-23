@@ -5,11 +5,16 @@
 <h2>Techniques are used to optimize the website:</h2>
 <ul>
   <li>Inline CSS to <a href="https://developers.google.com/speed/docs/insights/OptimizeCSSDelivery">optimize CSS delivery</a></li>
-	<li>Images are compressed</li>
+	
 	<li>Add async tag to js source to avoid render blocking</li>
 	<li>Use <a href ="https://github.com/typekit/webfontloader">Web Font Loader</a> to load fonts</li>
 	<li>Fixed two major issues in views/js/main.js to achieve 60 frames per second</li>
-	<li>JS and CSS files are minified</li>
+	<li>Uses Grunt to automatically perform optimizations
+	  <ul>
+	  	<li>JS and CSS files minify</li>
+		<li>Images compressed</li>
+	  </ul>	
+	</li>
 </ul>
 
 <h2>Testing:</h2>
